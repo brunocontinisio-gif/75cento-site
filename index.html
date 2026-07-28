@@ -1,20 +1,328 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+  <title>75CENTO | Pane • Vino • Matera</title>
 
-    <title>75CENTO</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4efe6;
+      color: #1c1c1c;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 6%;
+      background: rgba(244, 239, 230, 0.96);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    nav a {
+      margin-left: 16px;
+      color: #1c1c1c;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 70px 7%;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.66)),
+        linear-gradient(135deg, #8c6548, #2b211b);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    h1 {
+      margin-bottom: 18px;
+      font-size: clamp(50px, 14vw, 110px);
+      line-height: 0.9;
+      letter-spacing: -4px;
+    }
+
+    .hero h2 {
+      max-width: 600px;
+      margin-bottom: 28px;
+      font-size: clamp(24px, 6vw, 42px);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 6px 8px 6px 0;
+      padding: 14px 22px;
+      border: 1px solid white;
+      border-radius: 100px;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button.light {
+      background: white;
+      color: #1c1c1c;
+    }
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .intro {
+      max-width: 850px;
+    }
+
+    .section-label {
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .intro h2,
+    .menu-preview h2,
+    .gallery h2,
+    .contacts h2 {
+      margin-bottom: 24px;
+      font-size: clamp(34px, 8vw, 64px);
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .intro p {
+      max-width: 720px;
+      font-size: 20px;
+    }
+
+    .menu-preview {
+      background: #1c1c1c;
+      color: white;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 38px;
+    }
+
+    .menu-card {
+      min-height: 220px;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: #2b2b2b;
+    }
+
+    .menu-card h3 {
+      font-size: 25px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .photo-placeholder {
+      min-height: 260px;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      background: linear-gradient(135deg, #d6c0a7, #6d4d38);
+      color: white;
+      font-weight: 700;
+    }
+
+    .contacts {
+      background: #ded2c1;
+    }
+
+    .contact-links {
+      margin-top: 30px;
+    }
+
+    .contact-links a {
+      display: block;
+      width: fit-content;
+      margin: 12px 0;
+      color: #1c1c1c;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 35px 7%;
+      background: #111;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 750px) {
+      header {
+        align-items: flex-start;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+      }
+
+      nav a {
+        margin: 2px 0;
+      }
+
+      .menu-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1>75CENTO</h1>
+  <header>
+    <div class="logo">75CENTO</div>
 
-    <p>Pane • Vino • Matera</p>
+    <nav>
+      <a href="#esperienza">Esperienza</a>
+      <a href="#menu">Menu</a>
+      <a href="#foto">Foto</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Nel cuore di Matera</p>
+
+        <h1>75CENTO</h1>
+
+        <h2>Pane • Vino • Matera</h2>
+
+        <a class="button light" href="#menu">Guarda il menu</a>
+        <a class="button" href="#contatti">Dove siamo</a>
+      </div>
+    </section>
+
+    <section class="intro" id="esperienza">
+      <p class="section-label">L’esperienza 75CENTO</p>
+
+      <h2>Matera raccontata attraverso il gusto.</h2>
+
+      <p>
+        Nel cuore di Matera nasce 75CENTO, un fast casual
+        enogastronomico che celebra il Pane di Matera e i sapori
+        della tradizione lucana.
+      </p>
+    </section>
+
+    <section class="menu-preview" id="menu">
+      <p class="section-label">Il nostro menu</p>
+
+      <h2>Semplice, lucano, autentico.</h2>
+
+      <div class="menu-grid">
+        <article class="menu-card">
+          <h3>Taglieri e bruschette</h3>
+        </article>
+
+        <article class="menu-card">
+          <h3>Crostoni e pinse</h3>
+        </article>
+
+        <article class="menu-card">
+          <h3>Piatti della tradizione</h3>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery" id="foto">
+      <p class="section-label">I nostri piatti</p>
+
+      <h2>Una storia da vedere e assaggiare.</h2>
+
+      <div class="gallery-grid">
+        <div class="photo-placeholder">Taglieri</div>
+        <div class="photo-placeholder">Bruschette</div>
+        <div class="photo-placeholder">Crostoni</div>
+      </div>
+    </section>
+
+    <section class="contacts" id="contatti">
+      <p class="section-label">Vieni a trovarci</p>
+
+      <h2>Via del Corso, 58<br>Matera</h2>
+
+      <div class="contact-links">
+        <a href="tel:+393394128444">Telefono: +39 339 4128444</a>
+
+        <a href="https://wa.me/393394128444">
+          Scrivici su WhatsApp
+        </a>
+
+        <a href="https://www.instagram.com/75centomatera/">
+          Instagram @75centomatera
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>75CENTO — Pane • Vino • Matera</p>
+    <p>Via del Corso, 58 — Matera</p>
+  </footer>
 
 </body>
-
 </html>
